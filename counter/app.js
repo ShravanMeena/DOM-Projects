@@ -1,12 +1,29 @@
-console.log("JS FILE CONNECTED!!!!")
+// set inital value to zero
+let count = 0;
+// select value and buttons
+const value = document.querySelector("#value");
+const btns = document.querySelectorAll(".btn");
 
-const num1 = document.querySelector("#num1")
-const num2 = document.querySelector("#num2")
-const output = document.querySelector((".output"))
+btns.forEach(function (btn) {
+  btn.addEventListener("click", function (e) {
+    const styles = e.currentTarget.classList;
+    if (styles.contains("decrease")) {
+      count--;
+    } else if (styles.contains("increase")) {
+      count++;
+    } else {
+      count = 0;
+    }
 
-const addBtn = document.querySelector(("button"))
-
-addBtn.addEventListener("click", function () {
-    const sum = parseInt(num1.value) + parseInt(num2.value)
-    output.textContent = sum;
-})
+    if (count > 0) {
+      value.style.color = "green";
+    }
+    if (count < 0) {
+      value.style.color = "red";
+    }
+    if (count === 0) {
+      value.style.color = "#222";
+    }
+    value.textContent = count;
+  });
+});
