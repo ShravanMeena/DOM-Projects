@@ -1,15 +1,10 @@
-console.log("chalaa me")
-
 let button = document.querySelector("button")
 let cardContainer = document.querySelector(".card-container")
 
 let titleVal = document.querySelector("#title")
 let descVal = document.querySelector("#desc")
 
-
 button.addEventListener("click",addNewBox)
-
-
 
 function addNewBox(){
     const card = document.createElement("div") // element create (div,h1,p,li)
