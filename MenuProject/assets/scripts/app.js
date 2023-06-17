@@ -1,3 +1,4 @@
+
 // items
 let menu = [
     {
@@ -80,16 +81,23 @@ let menu = [
       img: "./images/item-10.jpeg",
       desc: `skateboard fam synth authentic semiotics. Live-edge lyft af, edison bulb yuccie crucifix microdosing.`,
     },
-  ];
+];
 
+// categories
 var all = document.querySelector('#all')
 var breakfast = document.querySelector('#breakfast')
 var lunch = document.querySelector('#lunch')
 var snacks = document.querySelector('#shakes')
 var dinner = document.querySelector('#dinner')
+
+// main container
 var sectionCenter = document.querySelector('.section-center')
+
 let displayItems = []
 
+// console.log('NOT FULLY LOADED')
+
+// first time pag load 
 window.addEventListener('DOMContentLoaded', (event) => {
     console.log('DOM fully loaded and parsed');
     menu.map(item => createNewElement(item))
@@ -128,6 +136,8 @@ all.addEventListener("click", function(){
 function createNewElement(item){
     let article = document.createElement("article")
     article.classList.add("menu-item")
+    article.style.border = "2px solid gray"
+    article.style.margin = "5px"
 
     let div = document.createElement("div")
     div.classList.add("menu-info")
@@ -153,3 +163,4 @@ function createNewElement(item){
     sectionCenter.appendChild(article)
 
 }
+
