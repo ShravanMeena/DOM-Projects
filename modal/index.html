@@ -1,0 +1,75 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>MDOAL</title>
+    <style>
+        *{
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+        body{
+            background-color: wheat;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            justify-content: center;
+            height: 100vh;
+
+        }
+        .main{
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            justify-content: center;
+            height: 100%;
+            width: 100%;
+            background-color: rgba(0, 0, 0, .9);
+            display: none;
+        }
+
+        .modal{
+            background-color: rgb(197, 193, 193);
+            border-radius: 10px;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            justify-content: center;
+            height: 300px;
+            width: 600px;
+        }
+    </style>
+</head>
+<body>
+    
+    <button class="btn">OPEN</button>
+
+    <div class="main">
+        <div class="modal">
+            <h1>SEEMA</h1>
+            <button class="btn-close">CLOSE</button>
+        </div>
+    </div>
+    <script>
+
+        let btn =  document.querySelector(".btn")
+        let btnClose =  document.querySelector(".btn-close")
+        const main = document.querySelector(".main")
+
+        btn.addEventListener("click", openModal)
+
+        function openModal(){
+            main.style.display = "flex"
+            btn.style.display = "none"
+        }
+
+        btnClose.addEventListener("click", closeModal)
+        function closeModal(){
+            main.style.display = "none"
+            btn.style.display = "block"
+        }
+    </script>
+</body>
+</html>
