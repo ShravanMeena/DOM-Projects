@@ -1,0 +1,9 @@
+.main{
+    border: 4px dotted red;
+    padding: 30px;
+}
+
+.inner {
+    border: 2px dotted blue;
+    padding: 20px;
+}

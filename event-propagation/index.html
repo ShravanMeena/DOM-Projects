@@ -1,0 +1,46 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <link rel="stylesheet" type="text/css" href="styles.css" />
+  </head>
+  <body>
+    <div class="main">
+      <h1>MAIN DIV</h1>
+      <div class="inner">
+        <h1>INNER DIV</h1>
+        <button>BUTTON</button>
+      </div>
+    </div>
+
+    <script>
+      const parent = document.querySelector(".main");
+      const child = document.querySelector(".inner");
+      const btn = document.querySelector("button");
+
+      /** add true here **/
+      parent.addEventListener("click", function (e) {
+        e.stopPropagation()
+        console.log("Clicked on parent!");
+      },false);
+      
+    //   agr esko true karoge to usko hum capturing bolnege or esme sabse pehle daada or feer baap or pote call hote hain
+    //   or bubbling eska oolta hian mtlb beta pehle cl hoga
+    // or agr aap chahte ho ki jisko bulaaye wahee aaye to  e.stopPropagation() ka Upayog krene
+
+      child.addEventListener("click", function (e) {
+        e.stopPropagation()
+
+        console.log("Clicked on child!");
+      },false);
+
+      btn.addEventListener("click", function (e) {
+        e.stopPropagation()
+        console.log("Clicked on btn!");
+      },false);
+    </script>
+  </body>
+</html>
+
+
+<!-- BY DEFAULT BEHAVIOR -> BUBBLING =>  target => root-->
+<!-- -> CAPTURING =>   root => target-->

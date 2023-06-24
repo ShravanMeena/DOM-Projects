@@ -1,17 +1,17 @@
 console.log("conncted..")
 
-var user = ["seema","shravan","manoj","suraj"]
-
+var user = ["https://vannilla-js-basic-project-15-slider.netlify.app/img-1.jpeg","https://images.pexels.com/photos/17239929/pexels-photo-17239929.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=2","https://images.pexels.com/photos/194096/pexels-photo-194096.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=2","https://images.pexels.com/photos/310435/pexels-photo-310435.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=2"]
 
 // console.log(user[user.length - 1]) =>>> last item of array
 
 var prevBtn = document.querySelector(".previous")
 var nextBtn = document.querySelector(".next")
-var author = document.querySelector("h2")
+var author = document.querySelector("img")
 var index = 0
 
 function newuser(){
-    author.textContent= user[index]
+    author.src= user[index]
+    prevBtn.style.display = "none"
 }
 
 window.addEventListener("DOMContentLoaded", newuser())
@@ -19,33 +19,22 @@ window.addEventListener("DOMContentLoaded", newuser())
 prevBtn.addEventListener("click",function(){
     // index = index - 1;
     index--
-
-    console.log(index, "UPER-PREV");
-    if(index < 0){
-        index = user.length - 1
+    author.src = user[index]
+    nextBtn.style.display = "block"
+    if(index === 0){
+        prevBtn.style.display = "none"
     }
-    console.log(index, "NEECHE-PREV");
-    author.textContent = user[index]
-
 })
 
 
 nextBtn.addEventListener("click", function(){
-    // index = index + 1;
     index++
-    
-    // CLICK 01 => OLDindex = 0 => index ==> 1
-    // CLICK 02 => OLDindex = 1 => index ==> 2
-    // CLICK 03 => OLDindex = 2 => index ==> 3
-    // CLICK 04 => OLDindex = 3 => index ==> 4
+    author.src = user[index]
 
-    console.log(index, "UPER-NEXT");
+    nextBtn.style.display = "block"
+    prevBtn.style.display = "block"
 
-    if(index >= user.length){
-        index = 0
+    if(index > user.length - 2){
+        nextBtn.style.display = "none"
     }
-
-    console.log(index, "NEECH-NEXT");
-    author.textContent = user[index]
-
 })
